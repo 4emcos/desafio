@@ -47,6 +47,7 @@ class Login extends Component {
         <Form className = "form" onSubmit={this.handleSignIn}>
         
           {this.state.error && <p>{this.state.error}</p>}
+        
           <input
             className = "entrada"
             type="email"

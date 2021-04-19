@@ -17,7 +17,7 @@ function PutDataToDB (props) {
             refEquipamento: props.refEquipamento, 
             quantidadeEquipamento: props.quantidadeEquipamento,
     }).then((response) => { response.status == 200 ? confirmCadastro = true : confirmCadastro = false})
-      .catch((error) => console.log(error.response.data))
+      .catch((error) => alert(error.response.data.error))
     };
 
 
@@ -112,7 +112,7 @@ function Requisicoes(props) {
 
 
 
-          <Button  type="submit" onClick={ () => confirmCadastro == true ? alert('Item Cadastrado')  : null} >Cadastrar</Button>
+          <Button  type="submit" onClick={ () => confirmCadastro == true ? alert('Requisição feita')  : null} >Cadastrar</Button>
         </Form>
       )}
 

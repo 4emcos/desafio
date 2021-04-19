@@ -13,12 +13,14 @@ router.post('/requisicao', async (req, res) => {
     try {
 
             var objEquipamento = await Equipamento.findOne({referencia: refEquipamento})
+
             if (Number(req.body.quantidadeEquipamento) > Number(objEquipamento.quantidade)){
                 return res.status(400).send({ error : 'Equipamento sem estoque para a quantidade pedida'})
             }
         
     
         const requisicao = await Requisicoes.create(req.body);
+        
         await Equipamento.findByIdAndUpdate(
             {_id : objEquipamento._id},
             {quantidade: Number(objEquipamento.quantidade) - Number(req.body.quantidadeEquipamento)}, { new: true}

@@ -4,7 +4,7 @@ import { withRouter } from "react-router";
 import "../styles/dashboard.css"
 import api from '../../services/api'
 
-class Content extends Component {
+class ListarReqs extends Component {
   state = {
     equipamentos: [],
     contador : 1
@@ -12,7 +12,7 @@ class Content extends Component {
 
   //Função que pega os equipamentos enviados pelo back para ser mostrado abaixo
   componentDidMount() {
-    api.get(`/equipamentos`)
+    api.get(`/requisicoes`)
       .then(res => {
         const equipamentos = res.data;
         this.setState({ equipamentos: equipamentos });
@@ -41,25 +41,19 @@ class Content extends Component {
                 <thead>
                   <tr>
                    
-                    <th>Equipamento</th>
-                    <th>Responsável</th>
-                    <th>Categoria</th>
-                    <th>Referência</th>
-                    <th>Quantidade disponível</th>
+                    <th>Nome do Requisitante</th>
+                    <th>Quantidade</th>
+                    <th>Referência do Equipamento</th>
+                   
                   </tr>
                 </thead>
                 <tbody>
                 {this.state.equipamentos.map(e =>
                   
                   <tr>
-                    
-                    
-                    <td>{e.nome}</td>
-                    <td>{e.responsavel}</td>
-                    <td>{e.categoria}</td>
-                    <td>{e.referencia}</td>
-                    <td>{e.quantidade}</td>
-                    {}
+                    <td>{e.nomeRequisitante}</td>
+                    <td>{e.quantidadeEquipamento}</td>
+                    <td>{e.refEquipamento}</td>
                   </tr> 
                     
 
@@ -82,5 +76,5 @@ class Content extends Component {
   }
 }
 
-export default withRouter(Content);
+export default withRouter(ListarReqs);
 

@@ -8,6 +8,7 @@ import Requisicoes from './requisicoes'
 import Navbar from './navbar.js'
 import Content from './content'
 import CadastrarEquipamento from './cadastrar-equipamentos'
+import ListarReqs from './listarReqs'
 
 import "../styles/dashboard.css"
 
@@ -28,8 +29,11 @@ class Dash extends Component{
         if (pagina == 'cadastrar') {
             this.setState({ pagina : <CadastrarEquipamento/>})
         }
-        if (pagina == 'requisicoes'){
+        if (pagina == 'requisicao'){
             this.setState({ pagina : <Requisicoes/>})
+        }
+        if (pagina == 'requisicoes'){
+            this.setState({ pagina : <ListarReqs/>})
         }
      
     }
@@ -73,15 +77,22 @@ class Dash extends Component{
                             </Nav.Item>
                             <Nav.Item>
                             <Nav.Link onClick= {() => {
-                                  this.toPage('requisicoes')
+                                  this.toPage('requisicao')
                                 }} 
-                                > Requisicoes</Nav.Link>
+                                > Requisitar equipamento</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link onClick= {() => {
                                     this.toPage('cadastrar')
                                 }} 
                                 > Cadastrar Equipamento</Nav.Link>
+                            </Nav.Item>
+
+                            <Nav.Item>
+                                <Nav.Link onClick= {() => {
+                                    this.toPage('requisicoes')
+                                }} 
+                                > Requisicoes</Nav.Link>
                             </Nav.Item>
                         
                             </Nav>

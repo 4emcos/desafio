@@ -41,6 +41,12 @@
 
 }
 
+.table{
+    background-color: #ffffff;
+    margin: 30px;
+    margin-left: 120px;
+}
+
 .equipamento {
     width: 500px;
     margin: auto;

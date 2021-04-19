@@ -34,7 +34,7 @@ const Routes = () => (
         <Route exact path= "/inicio" component= {Dashboard} />
         <Route path="/registrar" component={Registrar} />
         <Route path="/cadastrar-equipamento" component={CadastrarEquipamento} />
-        <Route path="/requisicoes" component={Requisicoes} />
+        <Route path="/requisicao" component={Requisicoes} />
         <Route path="*" component={() => <h1>Page not found</h1>} />
       </Switch>
       <ModalContainer />
