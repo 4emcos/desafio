@@ -39,8 +39,12 @@ class Login extends Component {
 
   render() {
     return (
-      <Container className = "cont">
-        <Form onSubmit={this.handleSignIn}>
+
+      <Container classname = "container">
+      < div className = "login" >
+    
+          
+        <Form className = "form" onSubmit={this.handleSignIn}>
         
           {this.state.error && <p>{this.state.error}</p>}
           <input
@@ -59,6 +63,9 @@ class Login extends Component {
           <hr className = "linha" />
           <Link className = "link" to="/registrar">Criar conta</Link>
         </Form>
+        
+     
+      </ div >
       </Container>
     );
   }

@@ -3,7 +3,7 @@ import { Col, Button, Form, Container} from 'react-bootstrap'
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import api from '../../services/api'
-
+import "../styles/dashboard.css"
 
 
 let confirmCadastro = false
@@ -35,13 +35,11 @@ const schema = yup.object({
 
 
   //Função que há o formulário de cadastro e ao confirmar envia as informações necessárias para o cadastro 
-function CadastrarEquipamentos(props) {
+function CadastrarEquipamentos() {
     
-
-
     return (
 
-      <Container id = "equipamento">
+      <div className = "equipamento">
 
       <Formik
       validationSchema={schema}
@@ -162,7 +160,7 @@ function CadastrarEquipamentos(props) {
 
     </Formik>
 
-    </Container>
+    </div>
     );
   }
   

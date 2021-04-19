@@ -1,5 +1,5 @@
 import React, {useState } from 'react';
-import { Col, Button, Form, Container} from 'react-bootstrap'
+import { Col, Button, Form, Container as div} from 'react-bootstrap'
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import api from '../../services/api'
@@ -37,7 +37,7 @@ function Requisicoes(props) {
 
     return (
 
-      <Container id = "requisicoes">
+      <div className = "requisicoes">
 
       <Formik
       validationSchema={schema}
@@ -112,13 +112,13 @@ function Requisicoes(props) {
 
 
 
-          <Button type="submit" onClick={ () => confirmCadastro == true ? alert('Item Cadastrado')  : null} >Submit form</Button>
+          <Button  type="submit" onClick={ () => confirmCadastro == true ? alert('Item Cadastrado')  : null} >Cadastrar</Button>
         </Form>
       )}
 
     </Formik>
 
-    </Container>
+    </div>
     );
   }
   

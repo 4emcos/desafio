@@ -1,5 +1,5 @@
 import React, {useState } from 'react';
-//import '../style/registrar.css'
+import '../styles/registrar.css'
 import {Col, Button, Form, Container} from 'react-bootstrap'
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -46,6 +46,7 @@ function Registrar(props) {
     return (
 
       <Container className= "cont">
+      <div className = "registrar">
 
       <Formik
       validationSchema={schema}
@@ -133,6 +134,7 @@ function Registrar(props) {
             <Form.Group as={Col} md="5" controlId="validationFormik05">
               <Form.Label>Confirmar Senha</Form.Label>
               <Form.Control
+                
                 type="password"
                 placeholder="********"
                 name="confirmPass"
@@ -147,12 +149,12 @@ function Registrar(props) {
             </Form.Group>
 
           </Form.Row>
-          <Button type="submit" onClick={ () => confirmLogin == true ? history.push('/') : null} >Cadastrar</Button>
+          <Button className = "button-register"  variant = "info" type="info" onClick={ () => confirmLogin == true ? history.push('/') : null} >Cadastrar</Button>
         </Form>
       )}
 
     </Formik>
-
+        </div>
     </Container>
     );
   }

@@ -13,7 +13,6 @@ const Navtop = () => {
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               
-               
             </Nav>
             
             <Nav inline>
